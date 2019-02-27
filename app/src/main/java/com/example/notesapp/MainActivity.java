@@ -19,8 +19,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //firebaseAuth = FirebaseAuth.getInstance();
+        SignUp=findViewById(R.id.sign_up_button);
+        LogIn=findViewById(R.id.log_in_button);
+        mailText=findViewById(R.id.log_in_mail);
+        passwordText= findViewById(R.id.log_in_password);
 
-        Bindlisteners();
+       /* if (firebaseAuth.getCurrentUser() != null){
+            System.out.println("Boogalu");
+        } */
+
         SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,11 +39,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void Bindlisteners(){
-        //firebaseAuth = FirebaseAuth.getInstance();
-        SignUp=findViewById(R.id.sign_up_button);
-        LogIn=findViewById(R.id.log_in_button);
-        mailText=findViewById(R.id.log_in_mail);
-        passwordText= findViewById(R.id.log_in_password);
-    }
+
 }
