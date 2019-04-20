@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
         mailText=findViewById(R.id.log_in_mail);
         passwordText= findViewById(R.id.log_in_password);
 
-       /* if (firebaseAuth.getCurrentUser() != null){
-            System.out.println("Boogalu");
-        } */
+        if (firebaseAuth.getCurrentUser() != null){
+            startActivity(new Intent(MainActivity.this,profile.class));
+        }
 
         SignUp.setOnClickListener(new View.OnClickListener() {
             @Override
