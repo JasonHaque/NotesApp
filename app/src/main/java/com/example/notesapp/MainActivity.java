@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();
         SignUp=findViewById(R.id.sign_up_button);
         LogIn=findViewById(R.id.log_in_button);
         mailText=findViewById(R.id.log_in_mail);
