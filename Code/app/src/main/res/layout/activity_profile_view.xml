@@ -8,4 +8,12 @@
     android:padding="20dp"
     tools:context=".views.ProfileView">
 
+    <TextView
+        android:layout_gravity="center"
+        android:textSize="42sp"
+        android:text="@string/app_name"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"/>
+
 </LinearLayout>
