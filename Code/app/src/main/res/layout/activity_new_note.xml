@@ -15,5 +15,28 @@
         android:layout_width="wrap_content"
         android:layout_marginBottom="20dp"
         android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/note_name"
+        android:hint="note name"
+        android:textSize="22sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        />
+    <EditText
+        android:id="@+id/note_description"
+        android:hint="note description"
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        />
+    <Button
+        android:id="@+id/save_note"
+        android:text="Save Note"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
