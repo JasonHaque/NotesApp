@@ -1,10 +1,9 @@
 package com.example.noteapp.authentication
 
-import android.app.ProgressDialog
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ProgressBar
 import android.widget.Toast
 import com.example.noteapp.R
 import com.example.noteapp.views.HomeViewActivity
