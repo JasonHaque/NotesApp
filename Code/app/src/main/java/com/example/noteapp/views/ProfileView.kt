@@ -13,7 +13,11 @@ class ProfileView : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_view)
+        bindWidgets()
         bindListeners()
+    }
+    private fun bindWidgets(){
+        user_view.text = "Welcome to the app "+FirebaseAuth.getInstance().currentUser?.email.toString()
     }
     private fun bindListeners(){
         log_out_button.setOnClickListener {
