@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.noteapp.R
+import com.example.noteapp.activites.NewNoteActivity
 import kotlinx.android.synthetic.main.activity_home_view.*
 
 class HomeViewActivity : AppCompatActivity() {
@@ -16,7 +17,8 @@ class HomeViewActivity : AppCompatActivity() {
 
     private fun bindListeners(){
         new_note_page.setOnClickListener {
-
+            val intent =Intent(this,NewNoteActivity::class.java)
+            startActivity(intent)
         }
         profile_page.setOnClickListener {
             val intent =Intent(this,ProfileView::class.java)
