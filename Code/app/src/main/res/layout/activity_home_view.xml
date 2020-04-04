@@ -20,6 +20,14 @@
         android:id="@+id/new_note_page"
         android:text="New Note"
         android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/profile_page"
+        android:text="profile"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
