@@ -34,6 +34,27 @@
         android:text="Log in"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
+        android:layout_marginBottom="40dp"
         android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="New here ? "
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/go_to_sign_up"
+            android:clickable="true"
+            android:textSize="21sp"
+            android:text="Sign up"
+            android:textColor="@color/colorAccent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="true" />
+    </LinearLayout>
 
 </LinearLayout>
