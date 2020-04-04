@@ -1,14 +1,19 @@
 package com.example.noteapp.authentication
 
+import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ProgressBar
 import android.widget.Toast
 import com.example.noteapp.R
+import com.example.noteapp.views.HomeViewActivity
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
+    private var firebaseAuth = FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -28,6 +33,12 @@ class LoginActivity : AppCompatActivity() {
             if (!error.equals("")){
                 Toast.makeText(this,error,Toast.LENGTH_LONG).show()
                 return@setOnClickListener
+            }
+
+            firebaseAuth.signInWithEmailAndPassword(email,password).addOnSuccessListener {
+                Toast.makeText(this,"Successfully logging in",Toast.LENGTH_LONG).show()
+                val intent = Intent(this,HomeViewActivity::class.java)
+                startActivity(intent)
             }
 
         }
