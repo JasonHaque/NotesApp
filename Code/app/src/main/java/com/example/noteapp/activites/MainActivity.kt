@@ -1,8 +1,9 @@
-package com.example.noteapp
+package com.example.noteapp.activites
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.noteapp.R
 import com.example.noteapp.authentication.LoginActivity
 import com.example.noteapp.views.HomeViewActivity
 import com.google.firebase.auth.FirebaseAuth

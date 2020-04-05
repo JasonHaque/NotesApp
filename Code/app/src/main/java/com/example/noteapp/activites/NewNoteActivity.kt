@@ -22,6 +22,8 @@ class NewNoteActivity : AppCompatActivity() {
                 Toast.makeText(this,error,Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
+
+
         }
     }
 
