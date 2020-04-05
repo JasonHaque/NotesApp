@@ -16,6 +16,7 @@ import com.google.firebase.database.ValueEventListener
 
 class AllNotesActivity : AppCompatActivity() {
     private var db = FirebaseDatabase.getInstance().reference
+    private val menu: MutableList<Notes> = mutableListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_all_notes)
@@ -25,34 +26,23 @@ class AllNotesActivity : AppCompatActivity() {
         val usermail = FirebaseAuth.getInstance().currentUser?.email.toString()
         val split =usermail.split("@")
         val user = split[0]
-        print("Hello from here")
-        db.child("Users").child(user).addValueEventListener(object : ValueEventListener {
+
+        db.child("Users").child(user).addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 println("Error receiving data")
             }
 
             override fun onDataChange(p0: DataSnapshot) {
-
-                if (p0.exists()){
-                    val dataMap = p0.value as HashMap<String,Any>?
-                    print(dataMap)
-                    for (key in dataMap!!.keys){
-                        val data = dataMap!![key]
-                        val userdata =
-                            data as HashMap<String, Any>?
-                        print(userdata)
-                        val abs = Notes(
-                            userdata!!["noteName"] as String,
-                            userdata["noteContent"] as String
-                        )
-                        notes.add(abs)
-
-
-                    }
-                }
-
-
-
+                //menu.clear()
+                //notes.clear()
+                p0.children.mapNotNullTo(notes) { it.getValue<Notes>(Notes::class.java) }
+                p0.children.mapNotNullTo(menu) { it.getValue<Notes>(Notes::class.java) }
+                //println("Menu printed")
+                //println(menu)
+                //println("notes printed")
+                //println(notes)
+                val adapter = NoteAdapter(notes)
+                recyclerView.adapter = adapter
             }
 
         })
@@ -64,9 +54,14 @@ class AllNotesActivity : AppCompatActivity() {
 
 
 
-
+        println("Menu printed")
+        println(menu)
+        println("notes printed")
+        println(notes)
 
         val adapter = NoteAdapter(notes)
+        //println(notes)
+        //println(menu)
         recyclerView.adapter = adapter
     }
 

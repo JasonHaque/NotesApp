@@ -29,8 +29,9 @@ class NewNoteActivity : AppCompatActivity() {
             val usermail = FirebaseAuth.getInstance().currentUser?.email.toString()
             val split =usermail.split("@")
             val user = split[0]
-
-            database.child("Users").child(user).child(noteName)
+            val key = database.child("Users").child(user).push().key
+            note.uuid = key
+            database.child("Users").child(user).child(key!!)
                 .setValue(note).addOnSuccessListener {
                     Toast.makeText(this,"Success",Toast.LENGTH_LONG).show()
                 }
