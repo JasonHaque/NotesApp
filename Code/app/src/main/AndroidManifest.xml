@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activites.NewNoteActivity"></activity>
+        <activity android:name=".activites.AllNotesActivity"></activity>
+        <activity android:name=".activites.NewNoteActivity" />
         <activity android:name=".views.ProfileView" />
         <activity android:name=".views.HomeViewActivity" />
         <activity android:name=".authentication.SignUpActivity" />
