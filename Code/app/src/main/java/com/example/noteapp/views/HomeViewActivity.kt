@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.example.noteapp.R
 import com.example.noteapp.activites.AllNotesActivity
 import com.example.noteapp.activites.NewNoteActivity
+import com.example.noteapp.activites.NotebookActivity
 import kotlinx.android.synthetic.main.activity_home_view.*
 
 class HomeViewActivity : AppCompatActivity() {
@@ -18,7 +19,7 @@ class HomeViewActivity : AppCompatActivity() {
 
     private fun bindListeners(){
         new_note_page.setOnClickListener {
-            val intent =Intent(this,NewNoteActivity::class.java)
+            val intent =Intent(this,NotebookActivity::class.java)
             startActivity(intent)
         }
         all_notes_page.setOnClickListener {
