@@ -19,6 +19,9 @@ class NotebookActivity : AppCompatActivity() {
         note_book_name.visibility = View.GONE
     }
     fun bindListeners(){
-
+        create_notebook.setOnClickListener {
+            note_book_name.visibility = View.VISIBLE
+            create_notebook.text = "NEXT"
+        }
     }
 }
