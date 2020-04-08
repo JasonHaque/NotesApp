@@ -16,4 +16,19 @@
         android:layout_marginBottom="20dp"
         android:layout_height="wrap_content"/>
 
+    <EditText
+        android:id="@+id/note_book_name"
+        android:hint= "Notebook Name"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/create_notebook"
+        android:text="Create New Notebook"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:layout_height="wrap_content"/>
+
+
 </LinearLayout>
