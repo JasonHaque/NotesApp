@@ -13,7 +13,7 @@ import com.example.noteapp.classes.Notes
 class NoteAdapter(val notelist : ArrayList<Notes>) : RecyclerView.Adapter<NoteAdapter.NoteHolder>() {
 
 
-    public class NoteHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class NoteHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val notename = itemView.findViewById<TextView>(R.id.recycler_note_name)
         val noteContent = itemView.findViewById<TextView>(R.id.recycler_note_description)
     }
