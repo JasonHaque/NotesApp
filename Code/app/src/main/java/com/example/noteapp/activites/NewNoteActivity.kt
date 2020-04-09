@@ -14,6 +14,7 @@ class NewNoteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_note)
+
         bindListeners()
     }
     private fun bindListeners(){
@@ -25,13 +26,15 @@ class NewNoteActivity : AppCompatActivity() {
                 Toast.makeText(this,error,Toast.LENGTH_LONG).show()
                 return@setOnClickListener
             }
+            val intent = intent
+            val notebookName = intent.getStringExtra("NotebookName")
             val note = Notes(noteName, noteContent)
             val usermail = FirebaseAuth.getInstance().currentUser?.email.toString()
             val split =usermail.split("@")
             val user = split[0]
-            val key = database.child("Users").child(user).push().key
+            val key = database.child("Users").child(user).child(notebookName).push().key
             note.uuid = key
-            database.child("Users").child(user).child(key!!)
+            database.child("Users").child(user).child(notebookName).child(key!!)
                 .setValue(note).addOnSuccessListener {
                     Toast.makeText(this,"Success",Toast.LENGTH_LONG).show()
                 }
