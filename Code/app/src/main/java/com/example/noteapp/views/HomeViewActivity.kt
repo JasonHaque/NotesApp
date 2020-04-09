@@ -18,7 +18,7 @@ class HomeViewActivity : AppCompatActivity() {
     }
 
     private fun bindListeners(){
-        new_note_page.setOnClickListener {
+        add_notebook.setOnClickListener {
             val intent =Intent(this,NotebookActivity::class.java)
             startActivity(intent)
         }
