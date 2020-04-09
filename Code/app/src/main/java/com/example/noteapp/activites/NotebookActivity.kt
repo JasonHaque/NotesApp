@@ -1,5 +1,6 @@
 package com.example.noteapp.activites
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -20,8 +21,17 @@ class NotebookActivity : AppCompatActivity() {
     }
     fun bindListeners(){
         create_notebook.setOnClickListener {
-            note_book_name.visibility = View.VISIBLE
-            create_notebook.text = "NEXT"
+            if (note_book_name.visibility == View.GONE){
+                note_book_name.visibility = View.VISIBLE
+                create_notebook.text = "NEXT"
+                return@setOnClickListener
+            }
+
+            val notebookName = note_book_name.text.toString()
+            val intent = Intent(this,NewNoteActivity::class.java)
+            intent.putExtra("NotebookName",notebookName)
+            startActivity(intent)
+
         }
     }
 }
